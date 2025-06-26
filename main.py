@@ -20,4 +20,4 @@ async def get_resources():
 
 # railway serer
 if __name__ == "__main__":
-    uvicorn.run(mcp.app, host="0.0.0.0", port=8000)
+    uvicorn.run(mcp.run("streamable-http"), host="0.0.0.0", port=8000)
