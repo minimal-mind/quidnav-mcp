@@ -4,16 +4,17 @@ from mcp.server.fastmcp import FastMCP
 mcp = FastMCP("quidnav")
 client = AsyncClient()
 
-QUIDNAV_URL = "https://www.quidnav.com"
+QUIDNAV_URL = "https://www.quidnav.com/api/"
 
 
-# resources
+# tools
 @mcp.tool(
     description="Returns max 50 online financial resources",
 )
 async def get_resources():
-    response = await client.get(QUIDNAV_URL + "/api/resources")
-    return response.text
+    response = await client.get(QUIDNAV_URL + "resources")
+    response.raise_for_status()
+    return response.json()
 
 
 # local server
