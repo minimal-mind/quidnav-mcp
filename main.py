@@ -1,5 +1,6 @@
 from httpx import AsyncClient
 from mcp.server.fastmcp import FastMCP
+import uvicorn
 
 mcp = FastMCP("quidnav")
 client = AsyncClient()
@@ -17,6 +18,6 @@ async def get_resources():
     return response.json()
 
 
-# local server
-# if __name__ == "__main__":
-#     uvicorn.run(mcp.app)
+# railway serer
+if __name__ == "__main__":
+    uvicorn.run(mcp.app, host="0.0.0.0", port=8000)
