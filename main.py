@@ -1,4 +1,3 @@
-import uvicorn
 from httpx import AsyncClient
 from mcp.server.fastmcp import FastMCP
 
@@ -18,5 +17,5 @@ async def get_resources():
 
 
 # local server
-if __name__ == "__main__":
-    uvicorn.run(mcp.app)
+# if __name__ == "__main__":
+#     uvicorn.run(mcp.app)
